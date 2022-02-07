@@ -14,3 +14,4 @@ This repository contains my tasks for the python training which also includes fr
 * https://www.youtube.com/watch?v=cYWiDiIUxQc
 * https://www.youtube.com/watch?v=lcQfQRDAMpQ
 * https://docs.docker.com/get-started/overview/
+* https://stackoverflow.com/questions/69252554/why-docker-not-running-flask-app-on-0-0-0-0

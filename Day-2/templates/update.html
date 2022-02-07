@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+
+    <h1 style="text-align: center">Update Employee</h1><br/>
+    <div class="but2">
+        <form action="/update/{{emp.id}}" method="POST">
+            <label>Employee Name:</label>
+            <input type="text" name="name" id="name" value="{{emp.name}}">
+            <label>Department Id:</label>
+            <input type="text" name="dept" id="dept" value="{{emp.dept}}">
+            <label>Department Name:</label>
+            <input type="text" name="dept_name" id="dept_name" value="{{emp.dept_name}}">
+            <label>Manager:</label>
+            <input type="text" name="manager_name" id="manager_name" value="{{emp.manager_name}}">
+            <input type="submit" value="Update Employee">
+        </form>
+  
+    </div>
+{% endblock %}

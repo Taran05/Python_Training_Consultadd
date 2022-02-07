@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block head %} {% endblock %}
+
+{% block body %} 
+<br/>
+<h1>Employee Data</h1>
+<table class="tab">
+    <thead>
+        <tr>
+            <th>Employee Name</th>
+            <th>Department Id</th>
+            <th>Department Name</th>
+            <th>Manager Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for e in employee %}
+        <tr>
+            <td>{{ e.name }}</td>
+            <td>{{ e.dept }}</td>
+            <td>{{ e.dept_name }}</td>
+            <td>{{ e.manager_name }}</td>
+            <td>
+                <a href="/update/{{ e.id }}" id="up">Update</a>
+                <br/>
+                <a href="/delete/{{ e.id }}" id="del">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<br/>
+    <div class="vertical-center">
+        <button type="button" class="but" onclick="openForm()">Add New Employee</button>
+    </div>
+<br/><br/><br/><br/><br/>
+
+<div class="form-popup" id="myForm">
+    <form action="/" class="form-container" method="post">
+        <h2 id="head-pop">Add New Employee</h2>
+        <label>Id:</label>
+        <input type="text" name="id" id="id"><br/>
+        <label>Employee Name:</label>
+        <input type="text" name="name" id="name"><br/>
+        <label>Department Id:</label>
+        <input type="text" name="dept" id="dept"><br/>
+        <label>Department Name:</label>
+        <input type="text" name="dept_name" id="dept_name"><br/>
+        <label>Manager:</label>
+        <input type="text" name="manager_name" id="manager_name"><br/></br></br>
+        <input type="submit" value="Add New Employee"><br/><br/>
+        <button type="button" class="btn close" onclick="closeForm()">Close</button>
+    </form>
+</div>
+
+<h1>Department Data</h1>
+<table class="tab">
+    <thead>
+        <tr>
+            <th>Department Id</th>
+            <th>Department Name</th>
+            <th>Manager Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for d in department %}
+        <tr>
+            <td>{{ d.dept }}</td>
+            <td>{{ d.dept_name }}</td>
+            <td>{{ d.manager_name }}</td>
+            <td>
+                <a href="/dept/delete/{{ d.id }}" id="del">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<script>
+    function openForm(){
+        document.getElementById("myForm").style.display="block";
+    }
+    function closeForm(){
+        document.getElementById("myForm").style.display="none";
+    }
+</script>
+{% endblock %}

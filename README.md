@@ -4,7 +4,8 @@ This repository contains my tasks for the python training which also includes fr
 
 ## Day-2 (Flask) :
 
-* Create a Flask application having model "Departments" and "Employee" , should have Department ID , Department Name , Manager ( should be an employee ).           * Implement CRUD operation.
+* Create a Flask application having model "Departments" and "Employee" , should have Department ID , Department Name , Manager ( should be an employee ).
+* Implement CRUD operations.           
 * Try to dockerize the app.
 
 ## Links :
